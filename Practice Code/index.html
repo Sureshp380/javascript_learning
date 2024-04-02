@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice Code</title>
+    <style>
+      li {
+        background: #f4f4f4;
+        border: 1px solid #ddd;
+        border-left: 3px solid #f36d33;
+        color: #666;
+        page-break-inside: avoid;
+        font-family: monospace;
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 1.6em;
+        max-width: 100%;
+        overflow: auto;
+        padding: 1em 1.5em;
+        display: block;
+        word-wrap: break-word;
+      }
+      pre {
+        background-color: #f4f4f4;
+        padding: 10px;
+        border-radius: 5px;
+        overflow-x: auto;
+      }
+
+      code {
+        font-family: "Courier New", Courier, monospace;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Coding Questions</h1>
+    <h3>Basic Javascript</h3>
+    <ol>
+      <li>
+        Write a function that takes two parameters and returns their sum.
+        <pre>
+            <code>
+                const sum = (a,b) => a + b; console.log(sum(10, 23))
+            </code>
+            </pre>
+      </li>
+      <li>
+        Create a function that checks whether a given number is even or odd.
+        <pre>
+            <code>
+                const evenOdd = (a) =>
+                                    a % 2 == 0 ? 
+                                    console.log(`${a} is Even`) : 
+                                    console.log(`${a} is Odd`);
+                                    evenOdd(234);
+            </code>
+          
+        </pre>
+      </li>
+      <li>
+        Write a function that converts a Celsius temperature to Fahrenheit.
+        <pre>
+            <code>
+                const getF = (c) => 32 + (c * 9) / 5;
+                console.log(`The temprature in Farhenheit is ${getF(78)}`);
+                
+            </code>
+          
+        </pre>
+      </li>
+      <li>
+        Create a function that takes a string and returns its length.
+        <pre>
+            <code>
+                const str = 'Hello World!'; console.log(str.length)
+            </code>
+        </pre>
+      </li>
+      <li>
+        Write a function that reverses a string.
+        <pre>
+            <code>
+            const str = 'Suresh Pradhan';
+            console.log(str.split('').reverse().join(''));
+            </code>
+        </pre>
+      </li>
+      <li>
+        Create a function that checks if a given number is a prime number.
+        <pre>
+            <code>
+                function isPrime(num) { 
+                    if (num < 2) {
+                        return false;
+                    }
+                    for(let i = 2; i<= Math.sqrt(num); i++) {
+                        if (num % i === 0) {
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+                
+                console.log(isPrime(4));
+            </code>
+            
+        </pre>
+      </li>
+      <li>
+        Write a function that returns the factorial of a number.
+        <pre>
+            <code>
+                // Algorithm for Factorial of a number.
+                    /***
+                    * n! = n * (n – 1)!
+                    n! = 1 if n = 0 or n = 1
+                    n! = n*(n-1) *(n-2)*....*1
+                    4! = 4*3*2*1 = 24
+                    here the factorial of a number 4 is 24
+                    */
+
+                    function factorialNum(num) {
+                        let res = 1;
+                        for(let i = 2; i<= num; i++){
+                            res = res*i;
+                        }
+                        return res;
+                    }
+                    const num = 4;
+                    console.log(`Factorial of ${num} is ${factorialNum(num)}`);
+            </code>
+            
+        </pre>
+      </li>
+      <li>
+        Create a function that generates a random number between 1 and 10.
+        <pre>
+            <code>
+                // Algorithm for that generates Random
+                /* Math.random() generates a random decimal between 0 and 1
+                   We Multiply it by 10 to get a random number between 0 and 10
+                   then we use Math.floor() to round it down to the nearest integer
+                   this will give us a random number between 0 and 9
+                 */
+                
+                function generateRandomNum() {
+                    let randomNum = Math.floor(Math.random() * 10);
+                    randomNum += 1;
+                    console.log(randomNum);
+                }
+                
+                generateRandomNum();
+            </code>
+            
+        </pre>
+      </li>
+      <li>
+        Write a function that capitalizes the first letter of each word in a
+        sentence.
+        <pre>
+            <code>
+                // Alogrithm to Capitalizes the first letter of each sentence
+                    /**
+                    * Split the sentence into words
+                    * iterate through each word
+                    * capitalize the first letter of each word by taking the first letter (charAt(0)) making it uppercase and combining it with the rest of the word.
+                    * Join the word
+                    */
+                    function capitalizeFirstLetter(sentence) {
+                        let words = sentence.split(" ");
+                        for(let i = 0; i< words.length; i++) {
+                            let word = words[i];
+                            words[i] = word.charAt(0).toUpperCase() + word.slice(1);
+                        }
+                        sentence = words.join(" ");
+                        return sentence;
+                    }
+
+                    console.log(capitalizeFirstLetter("hi i am suresh pradhan"));
+            </code>
+            
+        </pre>
+      </li>
+      <li>
+        Create a function that checks if a string is a palindrome.
+        <pre>
+            <code>
+                function checkPalindrome(str) {
+                    let word = str.split('').reverse().join('');
+                    if (word == str) {
+                        return true;
+                    }
+                    return false;
+                }
+                const str = 'civic';
+                const isPalindrome = checkPalindrome(str);
+                console.log(`The string ${str} is palindrome : ${isPalindrome}`);
+            </code>
+        </pre>
+      </li>
+      <li>
+        Write a function that sorts an array of numbers in ascending order.
+        <pre>
+            <code>
+                function sortArrAsc(arr) {
+                    const sortArr = arr.sort((a, b) => a - b);
+                    return sortArr;
+                  }
+                  const arr = [23, 45, 12, 67, 34]
+                  console.log(`The ascending order of this array: ${arr} is : ${sortArrAsc(arr)}`);
+            </code>
+        </pre>
+      </li>
+    </ol>
+    <script src="script.js"></script>
+  </body>
+</html>
