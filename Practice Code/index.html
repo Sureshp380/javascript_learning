@@ -213,6 +213,105 @@
             </code>
         </pre>
       </li>
+      <li>
+        Create a function that calculates the area of a rectangle.
+        <pre>
+            <code>
+              function calculateAreaRectangle(length, width) {
+                let res = length * width;
+                return res;
+              }
+              let length = 50, width = 60;
+              console.log(`The length: ${length}, width: ${width} and the area of rectangle is : ${calculateAreaRectangle(length, width)}`)
+            </code>
+        </pre>
+      </li>
+      <li>
+        Write a function that finds the maximum number in an array.
+        <pre>
+            <code>
+              const arr = [2,4,12,45,6,7,89];
+              const maxNum = (arr) => Math.max(...arr);
+              console.log(`The maximum number in array ${arr} is ${maxNum(arr)}`);
+            </code>
+        </pre>
+      </li>
+      <li>
+        Create a function that generates a random password of a given length.
+        <pre>
+            <code>
+              // Alogrithm to generate Random Password
+              /**
+              * 1. Initialize a variable with password with empty value and charset and includes the characters from where you are going to create a password.
+              * 2. loop through each character of the charset and create a random Index number
+              * 3. Add those randomly generated index number to refer to the position of the character in the charset variable
+              */
+              function generateRandomPassword(length) {
+                let charSet ="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+~`|}{[]:;?><,./-=";
+                let password = "";
+                
+                for(let i = 0; i< length; i++) {
+                  let randomIndex = Math.floor(Math.random() * charSet.length)
+                  password += charSet.charAt(randomIndex);
+                }
+                console.log(`The randomly generated password: ${password}`);
+              }
+
+              generateRandomPassword(10);
+            </code>
+        </pre>
+      </li>
+      <li>
+        Write a function that removes duplicates from an array.
+        <pre>
+            <code>
+              function removeDuplicateArray(arr) {
+                const filteredArr = arr.filter((value, index) => arr.indexOf(value) === index);
+                console.log(filteredArr);
+              }
+              removeDuplicateArray([22, 22, 33, 33, 44, 4]);
+            </code>
+        </pre>
+      </li>
+      <li>
+        Create a function that calculates the sum of all numbers in an array.
+        <pre>
+            <code>
+              function sumofAllArray(arr) {
+                let sum = 0;
+                for(let i=0; i< arr.length; i++) {
+                  sum += arr[i];
+                }
+                console.log(sum);
+              }
+              sumofAllArray([1,2,3]);
+            </code>
+        </pre>
+      </li>
+      <li>
+        Write a function that converts a binary number to decimal.
+        <pre>
+            <code>
+              function convertBinaryToDecimal (binaryNum) {
+                let decimal = parseInt(binaryNum,2);
+                console.log(decimal);
+              }
+              convertBinaryToDecimal(1010);
+            </code>
+        </pre>
+      </li>
+      <li>
+        Write a function that converts a binary number to decimal.
+        <pre>
+            <code>
+              function convertBinaryToDecimal (binaryNum) {
+                let decimal = parseInt(binaryNum,2);
+                console.log(decimal);
+              }
+              convertBinaryToDecimal(1010);
+            </code>
+        </pre>
+      </li>
     </ol>
     <script src="script.js"></script>
   </body>

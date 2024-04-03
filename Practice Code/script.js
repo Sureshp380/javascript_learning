@@ -1,6 +1,5 @@
-function sortArrAsc(arr) {
-  const sortArr = arr.sort((a, b) => a - b);
-  return sortArr;
+function convertBinaryToDecimal (binaryNum) {
+  let decimal = parseInt(binaryNum,2);
+  console.log(decimal);
 }
-const arr = [23, 45, 12, 67, 34]
-console.log(`The ascending order of this array: ${arr} is : ${sortArrAsc(arr)}`);
+convertBinaryToDecimal(1010);
