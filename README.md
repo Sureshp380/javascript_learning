@@ -36,4 +36,11 @@
 
 - Write a function that converts a binary number to decimal. 
 
- 
+- Create a function that generates an array of Fibonacci numbers up to a given number.
+ - Write a function that checks if a string contains a specific substring.
+- Create a function that calculates the perimeter of a rectangle.
+- Write a function that converts a decimal number to binary.
+- Create a function that finds the minimum number in an array.
+- Write a function that checks if a year is a leap year.
+- Create a function that calculates the average of numbers in an array.
+- Write a function that converts a string to lowercase.

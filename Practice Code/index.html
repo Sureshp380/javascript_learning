@@ -301,14 +301,190 @@
         </pre>
       </li>
       <li>
-        Write a function that converts a binary number to decimal.
+        Create a function that generates an array of Fibonacci numbers up to a given number.
         <pre>
             <code>
-              function convertBinaryToDecimal (binaryNum) {
-                let decimal = parseInt(binaryNum,2);
-                console.log(decimal);
+              // Algorithm for Fibonacci series
+              /*
+                - Intialize var1 and var2 with 0 and 1 respectively.
+                - Find the Sum of the var1 + var2. Store it in the array
+                - Assign Sum to var1.
+                - Assign var1 to var2.
+                - Repeat the Iteration
+               */
+                 function generateFibonacciSeries(limit) {
+                   let num1 = 0, num2 = 1, sum = 0;
+                   const arr = [num1];
+                   for (let i = 1; i < limit ; i++) {
+                     sum = num1 + num2;
+                     arr.push(sum);
+                     num2 = num1;
+                     num1 = sum;
+                   }
+                   return arr;
+                 }
+                 
+                 console.log(generateFibonacciSeries(10));
+            </code>
+        </pre>
+      </li>
+      <li>
+        Write a function that checks if a string contains a specific substring.
+        <pre>
+            <code>
+                /**
+                * 
+                * @param {*} str 
+                * @param {*} subString 
+                * @returns 
+                */
+                function toCheckSubstring(str, subString) {
+                  if (str.includes(subString)) {
+                    return true;
+                  } else {
+                    return false;
+                  }
+                }
+                console.log(toCheckSubstring('Hello World', 'Hello'))
+            </code>
+        </pre>
+      </li>
+      <li>
+        Create a function that calculates the perimeter of a rectangle.
+        <pre>
+            <code>
+              //calculates perimter of the rectangle
+              /**
+               * Formula to calculate the perimeter of the rectangle.
+               * Perimeter = (length + width) * 2
+               */
+              
+              function calcPerimeterRectangle(length, width) {
+                let res = (length + width) * 2;
+                return res;
               }
-              convertBinaryToDecimal(1010);
+              let length = 12, width = 4;
+              console.log(`The length ${length} cm and breadth ${width} cm and perimeter is calculated: ${calcPerimeterRectangle(length, width)} cm`);
+            </code>
+        </pre>
+      </li>
+      <li>
+        Create a function that calculates the perimeter of a rectangle.
+        <pre>
+            <code>
+              //calculates perimter of the rectangle
+              /**
+               * Formula to calculate the perimeter of the rectangle.
+               * Perimeter = (length + width) * 2
+               */
+              
+              function calcPerimeterRectangle(length, width) {
+                let res = (length + width) * 2;
+                return res;
+              }
+              let length = 12, width = 4;
+              console.log(`The length ${length} cm and breadth ${width} cm and perimeter is calculated: ${calcPerimeterRectangle(length, width)} cm`);
+            </code>
+        </pre>
+      </li>
+      <li>
+        Write a function that converts a decimal number to binary.
+        <pre>
+            <code>
+              function convertDecimalToBinary (decimalNum) {
+                if (typeof decimalNum !== 'number' || isNaN(decimalNum)) {
+                  return `${decimalNum} is an Invalid Input. Please enter a valid number`;
+                }
+                
+                if (decimalNum < 0) {
+                  return `The ${decimalNum} is a negative number`;
+                }
+                
+                if(decimalNum == 0) {
+                  return 0;
+                }
+                
+                let binaryNum = '';
+                while (decimalNum > 0) {
+                  let remainder = decimalNum % 2;
+                  binaryNum = remainder + binaryNum;
+                  decimalNum = Math.floor(decimalNum / 2);
+                }
+                
+                return binaryNum;
+              }
+              console.log(convertDecimalToBinary(5))
+            </code>
+        </pre>
+      </li>
+      <li>
+        Create a function that finds the minimum number in an array.
+        <pre>
+            <code>
+              function minNumInArr (arr) {
+                let minNum = Math.floor(Math.min(...arr));
+                 return minNum;
+               }
+               
+               const arr = [2, 3, 5, 4, 0, -1, 6, 10, 9, 1, 14];
+               console.log(`The minimum number from ${arr} is ${minNumInArr(arr)}`);
+            </code>
+        </pre>
+      </li>
+      <li>
+        Write a function that checks if a year is a leap year.
+        <pre>
+            <code>
+              /**
+                * Leap years are divisible by 4
+                * But years divisible by 100 are not leap years, unless they are also divisible by 400
+                * This is the rule for Gregorian calendar leap years
+                * @param {*} year 
+                * @returns 
+                */
+                function isLeapYear (year) {
+                  if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+                    return true;
+                  } else {
+                    return false;
+                  }
+                }
+                let year = 2024;
+                console.log(`The year ${year} is leap year: ${isLeapYear}`)
+            </code>
+        </pre>
+      </li>
+      <li>
+        Create a function that calculates the average of numbers in an array.
+        <pre>
+            <code>
+              /**
+                * The reduce() method of Array instances executes a user-supplied "reducer" callback function on each element of the array, in order, passing in the return value from the calculation on the preceding element. The final result of running the reducer across all elements of the array is a single value.
+
+                The first time that the callback is run there is no "return value of the previous calculation". If supplied, an initial value may be used in its place. Otherwise the array element at index 0 is used as the initial value and iteration starts from the next element (index 1 instead of index 0).
+                * @param {*} arr 
+                * @returns 
+                */
+                function calcAvg (arr) {
+                  let sum = arr.reduce((total , ele) => total + ele ,0);
+                  let _avg = Math.floor(sum / arr.length) || 0
+                  return _avg;
+                }
+                const arr = [23,45,35,12,67,48,90];
+                console.log(`The average of numbers in the given array ${arr} = ${calcAvg(arr)}`)
+            </code>
+        </pre>
+      </li>
+      <li>
+        Write a function that converts a string to lowercase.
+        <pre>
+            <code>
+              function convertStrToLower(str) {
+                let res  = str.toLowerCase();
+                return res;
+              }
+              let str = "SURESH PRADHAN"
+              console.log(`The lowercase of the string ${str} is ${convertStrToLower(str)}`);
             </code>
         </pre>
       </li>

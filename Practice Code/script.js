@@ -1,5 +1,6 @@
-function convertBinaryToDecimal (binaryNum) {
-  let decimal = parseInt(binaryNum,2);
-  console.log(decimal);
+function convertStrToLower(str) {
+  let res  = str.toLowerCase();
+  return res;
 }
-convertBinaryToDecimal(1010);
+let str = "SURESH PRADHAN"
+console.log(`The lowercase of the string ${str} is ${convertStrToLower(str)}`);
