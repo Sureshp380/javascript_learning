@@ -488,6 +488,137 @@
             </code>
         </pre>
       </li>
+      <li>
+        Create a function that calculates the square root of a number.
+        <pre>
+            <code>
+              function calcSquareRt(num) {
+                let res = Math.sqrt(num);
+                return res;
+              }
+              let num = 16
+              console.log(`The square root of a ${num} is ${calcSquareRt(num)}`);
+            </code>
+        </pre>
+      </li>
+      <li>
+        Write a function that removes whitespace from the beginning and end of a string.
+        <pre>
+            <code>
+              function removeWhiteSpace(str) {
+                let _str = str.trim();
+                return _str;
+              }
+              let str = "  Hello! How are you doing today  ";
+              console.log(`${str} = ${removeWhiteSpace(str)}`);
+            </code>
+        </pre>
+      </li>
+      <li>
+        Create a function that multiplies all numbers in an array.
+        <pre>
+            <code>
+              function multiplyAllArrayEle(arr) {
+                let multiply = arr.reduce((a, b) => a * b, 1);
+                return multiply;
+              }
+              const arr = [23,45,35,12,67,48,90];
+              console.log(multiplyAllArrayEle(arr));
+            </code>
+        </pre>
+      </li>
+      <li>
+        Write a function that checks if a number is a perfect square.
+        <pre>
+            <code>
+              function checkIsPerfectSquare (num) {
+                let isPerfectSquare = Math.floor(Math.sqrt(num)) == Math.ceil(Math.sqrt(num))? true : false;
+                return isPerfectSquare;
+              }
+              let num = 14;
+              console.log(`${num} is Perfect Square : ${checkIsPerfectSquare(num)}`);
+            </code>
+        </pre>
+      </li>
+      <li>
+        Create a function that calculates the power of a number.
+        <pre>
+            <code>
+              function calcPowNumber(base, exp) {
+                let res = Math.pow(base, exp);
+                return res;
+              }
+              
+              let base = 2, exp = 4;
+              console.log(`The Power of Number ${base} is ${calcPowNumber(base, exp)}`);
+            </code>
+        </pre>
+      </li>
+      <li>
+        Write a function that returns the last element of an array.
+        <pre>
+            <code>
+              function returnLastElement(arr) {
+                let lastElement = arr[arr.length - 1];
+                return lastElement;
+              }
+              const arr  = [2, 3, 5, 4, 0, -1, 6, 10, 9, 1, 14];
+              console.log(`The last element of ${arr} is ${returnLastElement(arr)}`);
+            </code>
+        </pre>
+      </li>
+      <li>
+        Create a function that finds the index of a given element in an array.
+        <pre>
+            <code>
+              function getIndex(arr, num) {
+                let indexOfEle = arr.indexOf(num);
+                if (indexOfEle == -1){
+                  indexOfEle = "The given element is not from the provided array. Please check"
+                } 
+                return indexOfEle;
+              }
+              const arr  = [2, 3, 5, 4, 0, -1, 6, 10, 9, 1, 14];
+              let num = 2;
+              console.log(`The index of ${num} from ${arr} is ${getIndex(arr, num)}`);
+            </code>
+        </pre>
+      </li>
+      <li>
+        Write a function that checks if a string is empty.
+        <pre>
+            <code>
+              function checkEmptyString (str) {
+                let isEmpty = str == null || str == undefined || str.length === 0? true : false;
+                return isEmpty;
+              }
+              let str = "Suresh Pradhan";
+              console.log(checkEmptyString(str));
+            </code>
+        </pre>
+      </li>
+      <li>
+        Create a function that concatenates two arrays
+        <pre>
+            <code>
+              function concatenateArray(arr1 = [], arr2 = []) {
+                const arr = arr1.concat(...arr2)
+                return arr;
+              }
+              const arr1 = [1, 2, 3, 4];
+              const arr2 = [5, 6, 7, 8];
+              console.log(concatenateArray(arr1, arr2));
+            </code>
+        </pre>
+      </li>
+      <li>
+        Write a function that removes a specific element from an array.
+        <pre>
+            <code>
+              
+            </code>
+        </pre>
+      </li>
     </ol>
     <script src="script.js"></script>
   </body>
